@@ -22,6 +22,7 @@ vim.keymap.set('n', '<leader>ws', ':split<CR>', { desc = '[s]plit horizontally' 
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'split [v]ertically' })
 vim.keymap.set('n', '<leader>wq', ':close<CR>', { desc = '[c]lose' })
 
+
 -- LSP keymaps
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[a]ction'})
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = '[r]ename'})

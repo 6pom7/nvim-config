@@ -30,6 +30,10 @@ require('mini.basics').setup()
 require('mini.pairs').setup()
 require('mini.completion').setup()
 
+-- Allows searching for code actions
+require('mini.pick').setup()
+vim.ui.select = require('mini.pick').ui_select
+
 require('mini.clue').setup({
 	triggers = {{ mode = { 'n', 'x' }, keys = '<Leader>' },},
 	clues = {
