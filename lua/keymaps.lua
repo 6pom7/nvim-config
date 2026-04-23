@@ -28,6 +28,7 @@ vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[a]ction'})
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = '[r]ename'})
 vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { desc = 'go to [d]efinition'})
 vim.keymap.set('n', '<leader>cD', vim.diagnostic.open_float, { desc = 'show [D]iagnostics'})
+vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end, { desc = '[f]ormat' })
 
 -- Telescope
 local builtin = require('telescope.builtin')
