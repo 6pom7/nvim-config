@@ -8,15 +8,12 @@ vim.wo.foldmethod = 'expr'
 vim.o.foldlevel = 99 -- Start with all folds open
 vim.o.foldlevelstart = 99 -- Ensure this applies when opening new files
 
--- Indentation, provided by nvim-treesitter
--- Fixes bad indentation
-vim.o.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-
 -- Indenting
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
+vim.o.cindent = true
 
 -- enable mouse mode
 vim.o.mouse = 'a'
