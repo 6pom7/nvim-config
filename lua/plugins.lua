@@ -27,10 +27,10 @@ vim.pack.add({
 
 vim.cmd.colorscheme('vague')
 
-require('todo-comments').setup()
 require('mini.basics').setup()
 require('mini.pairs').setup()
 require('mini.completion').setup()
+
 
 -- Allows searching for code actions
 require('mini.pick').setup()
@@ -44,6 +44,8 @@ require('mini.clue').setup({
     { mode = 'n', keys = '<Leader>w', desc = '+window' },
   }
 })
+
+require('todo-comments').setup()
 
 require('oil').setup()
 
