@@ -3,10 +3,18 @@ vim.opt.clipboard = "unnamedplus"
 vim.o.number = true
 
 -- Folding
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.wo.foldmethod = 'expr'
-vim.o.foldlevel = 99 -- Start with all folds open
-vim.o.foldlevelstart = 99 -- Ensure this applies when opening new files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'python', 'javascript', 'rust', 'dart' },
+  callback = function()
+    -- Enable Tree-sitter-based folding
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.wo.foldmethod = 'expr'
+    -- Optional: configure fold behavior
+    -- vim.opt.foldcolumn = "1" -- Show fold Symbol on left column
+    vim.wo.foldlevel = 99  -- Start with all folds open
+    vim.wo.foldlevelstart = 99
+  end,
+})
 
 -- Indenting
 vim.o.expandtab = true
