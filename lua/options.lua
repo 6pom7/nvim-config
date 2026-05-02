@@ -3,6 +3,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.o.number = true
 
 -- Folding
+vim.o.foldlevelstart = 99
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'python', 'javascript', 'rust', 'dart' },
   callback = function()
@@ -12,7 +14,6 @@ vim.api.nvim_create_autocmd('FileType', {
     -- Optional: configure fold behavior
     -- vim.opt.foldcolumn = "1" -- Show fold Symbol on left column
     vim.wo.foldlevel = 99  -- Start with all folds open
-    vim.wo.foldlevelstart = 99
   end,
 })
 
